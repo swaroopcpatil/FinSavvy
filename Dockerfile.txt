@@ -1,0 +1,19 @@
+# Specify the base image
+FROM nvcr.io/nvidia/ai-workbench/pytorch:1.0.2
+
+# Ensure the directory exists
+RUN mkdir -p /opt/project/build/
+
+# Set the working directory
+WORKDIR /opt/project/build/
+
+# Use bash shell for subsequent RUN commands
+SHELL ["/bin/bash", "-c"]
+
+# Additional commands (e.g., installing dependencies, copying project files)
+# RUN apt-get update && apt-get install -y some-package
+# COPY . /opt/project/build/
+# RUN pip install -r requirements.txt
+
+# Default command to run when the container starts
+# CMD ["python", "app.py"]
