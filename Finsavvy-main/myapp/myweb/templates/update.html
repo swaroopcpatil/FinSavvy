@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title %}update fin{% endblock title %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-success text-white text-center">
+            <h2 class="mb-0">Update Your Details</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Personal Information</h4>
+                        <div class="mb-3">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.phone_number|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.date_of_birth|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.gender|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.location|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Financial Information</h4>
+                        <div class="mb-3">
+                            {{ form.primary_bank|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.investment_accounts|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.retirement_accounts|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.investment_goals|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.income_sources|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.income_amount|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.expense_categories|as_crispy_field }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.expense_amounts|as_crispy_field }}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg mt-4 d-block w-100">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

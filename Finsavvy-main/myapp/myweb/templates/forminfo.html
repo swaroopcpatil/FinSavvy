@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block something %}
+<li><a href="{% url "ai" %}">Try AI</a></li>
+<li><a href="{% url "user_details" %}">FinDetail</a></li>
+
+{% endblock something %}
+{% block title %}FinDetails{% endblock title %}FinDetails
+{% block content %}
+  <div class="container mt-5">
+    <div class="card shadow-lg">
+      <div class="card-header bg-primary text-white text-center">
+        <h2 class="mb-0">Register</h2>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" class="register-form">
+          <h3 class="text-center text-muted mb-4">Personal Info</h3>
+
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="first_name" class="form-label">First Name:</label>
+              <input type="text" id="first_name" name="first_name" required class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="last_name" class="form-label">Last Name:</label>
+              <input type="text" id="last_name" name="last_name" required class="form-control">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email Address:</label>
+              <input type="email" id="email" name="email" required class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone_number" class="form-label">Phone Number:</label>
+              <input type="tel" id="phone_number" name="phone_number" required class="form-control">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="date_of_birth" class="form-label">Date of Birth:</label>
+              <input type="date" id="date_of_birth" name="date_of_birth" required class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gender" class="form-label">Gender:</label>
+              <select id="gender" name="gender" required class="form-control">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label">Location:</label>
+            <input type="text" id="location" name="location" required class="form-control">
+          </div>
+
+          <h3 class="text-center text-muted my-4">Financial Info</h3>
+
+          <div class="mb-3">
+            <label for="primary_bank" class="form-label">Primary Bank:</label>
+            <input type="text" id="primary_bank" name="primary_bank" required class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="investment_accounts" class="form-label">Investment Accounts:</label>
+            <textarea id="investment_accounts" name="investment_accounts" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="retirement_accounts" class="form-label">Retirement Accounts:</label>
+            <textarea id="retirement_accounts" name="retirement_accounts" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="investment_goals" class="form-label">Investment Goals:</label>
+            <textarea id="investment_goals" name="investment_goals" required class="form-control"></textarea>
+          </div>
+
+          <h3 class="text-center text-muted my-4">Debt Info</h3>
+
+          <div class="mb-3">
+            <label for="debt_types" class="form-label">Debt Types:</label>
+            <textarea id="debt_types" name="debt_types" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="debt_amounts" class="form-label">Debt Amounts:</label>
+            <textarea id="debt_amounts" name="debt_amounts" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="interest_rates" class="form-label">Interest Rates:</label>
+            <textarea id="interest_rates" name="interest_rates" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="debt_repayment_plans" class="form-label">Debt Repayment Plans:</label>
+            <textarea id="debt_repayment_plans" name="debt_repayment_plans" required class="form-control"></textarea>
+          </div>
+
+          <h3 class="text-center text-muted my-4">Income & Expenses</h3>
+
+          <div class="mb-3">
+            <label for="income_sources" class="form-label">Income Sources:</label>
+            <textarea id="income_sources" name="income_sources" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="income_amount" class="form-label">Income Amount:</label>
+            <input type="number" id="income_amount" name="income_amount" required class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="expense_categories" class="form-label">Expense Categories:</label>
+            <textarea id="expense_categories" name="expense_categories" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="expense_amounts" class="form-label">Expense Amounts:</label>
+            <textarea id="expense_amounts" name="expense_amounts" required class="form-control"></textarea>
+          </div>
+
+          <h3 class="text-center text-muted my-4">Insurance Info</h3>
+
+          <div class="mb-3">
+            <label for="insurance_types" class="form-label">Insurance Types:</label>
+            <textarea id="insurance_types" name="insurance_types" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="insurance_coverage" class="form-label">Insurance Coverage:</label>
+            <textarea id="insurance_coverage" name="insurance_coverage" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="insurance_premiums" class="form-label">Insurance Premiums:</label>
+            <textarea id="insurance_premiums" name="insurance_premiums" required class="form-control"></textarea>
+          </div>
+
+          <h3 class="text-center text-muted my-4">Financial Goals</h3>
+
+          <div class="mb-3">
+            <label for="short_term_goals" class="form-label">Short-Term Goals:</label>
+            <textarea id="short_term_goals" name="short_term_goals" required class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="long_term_goals" class="form-label">Long-Term Goals:</label>
+            <textarea id="long_term_goals" name="long_term_goals" required class="form-control"></textarea>
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-success btn-lg">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

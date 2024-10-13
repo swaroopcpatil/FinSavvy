@@ -1,0 +1,81 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finsavvy - Your Financial Guide</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{% static "images/logo.jpg" %}" width="70px" height="60px" alt="">
+            </div>
+            <ul>
+                {% if user.is_authenticated %}<li><a href="{% url "ai" %}">Try AI</a></li>
+                {% else %}
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About Us</a></li>
+                
+                {% endif %}
+                <div class="cred">
+                    {% if user.is_authenticated %}
+                    <li><a href="">Welcome {{user.username|capfirst}}</a></li>
+                    <li><a href="{% url "logout" %}">Logout</a></li>
+
+                    {% else %}
+                    <li><a href="{% url "login" %}">Log in</a></li>
+                    <li><a href="{% url "register" %}">Register</a></li>
+                    {% endif %}
+                </div>
+            </ul>
+        </nav> 
+    </header>
+    <section class="container">
+        <div class="heading">
+            <h1>PERSONAL<br> BUDGETING<br> GAME</h1>
+            <p>An engaging learning experience that teaches financial literacy skills with <br> real-life scenarios and
+                consequences. <br> Students play twelve virtual months to sharpen their skills.</p>
+            <button>Watch video</button>
+        </div>
+        <div class="img">
+            <img src="https://personalfinancelab.com/wp-content/uploads/budget-game-laptop.png" alt="">
+        </div>
+    </section>
+    <section class="cards">
+        <h1>Personal Budget Game Features</h1>
+        <div class="features">
+            <div class="feature1">
+                <img src="https://personalfinancelab.com/wp-content/uploads/students-learn-building-budget.png" alt="">
+                <h2>Students Build a Budget to Manage Income & Expenses</h2>
+                <p>Students learn how to manage realistic monthly expenses and bills, and their choices have long-term
+                    impacts on the events they experience.</p>
+            </div>
+            <div class="feature2">
+                <img src="https://personalfinancelab.com/wp-content/uploads/students-learn-real-life-scenarios.png" alt="">
+                <h2>Real-Life Scenarios, with Both Planned & Unexpected Expense</h2>
+                <p>In an ideal world we would stick to our planned budgets. This is never the case in real life.
+                    Students learn through experience how each choice they make has consequences.</p>
+            </div>
+            <div class="feature3">
+                <img src="https://personalfinancelab.com/wp-content/uploads/students-learn-savings-goal.png" alt="">
+                <h2>Set Realistic Savings Goals to Build Net Worth & Quality of Life</h2>
+                <p>Reinforcing the saving habit so students realize the importance of setting and maintaining savings
+                    goals. When unexpected life events pop-up they're ready for them.</p>
+            </div>
+            <div class="feature4">
+                <img src="https://personalfinancelab.com/wp-content/uploads/students-learn-manage-credit.png" alt="">
+                <h2>Students Manage Their Credit and Learn About Credit Scores</h2>
+                <p>Most budgeting games are focused on savings only, which is unrealistic. Students learn about
+                    balancing needs vs wants, and how to use credit responsibly to build their credit score.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

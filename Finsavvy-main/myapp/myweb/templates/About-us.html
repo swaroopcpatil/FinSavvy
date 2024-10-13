@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Custom CSS for 2x2 Grid Layout -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        .container-blocks {
+            margin-top: 40px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .block {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 100%;
+        }
+
+        .block h1, .block h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .block p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .block h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            text-align: center;
+        }
+
+        /* Ensure blocks take up equal space and align properly */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-6 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 50%;
+            padding: 15px;
+        }
+
+        .col-md-12 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 100%;
+            padding: 15px;
+        }
+
+        .block {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6, .col-md-12 {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- 2x2 Grid Layout for About Us, Problem Statement & Overview, and Tech Stack -->
+    <div class="container-blocks">
+        <div class="row">
+            <!-- About Us Block -->
+            <div class="col-md-6">
+                <div class="block">
+                    <h1>About Us</h1>
+                    <h4>Team Name: Ultorn AI</h4>
+                    <div class="team-members">
+                        <h4>Member 1: Sujan Rathod</h4>
+                        <h4>Member 2: Abhijith Patil</h4>
+                        <h4>Member 3: Swaroop C Patil</h4>
+                        <h4>Member 4: Chithranjan</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combined Problem Statement & Overview Block -->
+            <div class="col-md-6">
+                <div class="block">
+                    <h1>Problem Statement & Overview</h1>
+                    <h4>Scaling Generative AI with NIM</h4>
+                    <p>
+                        Leverage the power of NIM (NVIDIA Inference Microservices) to scale and optimize Generative AI applications.
+                        Your task is to create high-performance Gen AI solutions by integrating NIM services into cutting-edge applications 
+                        or developing new tools that empower engineers to seamlessly incorporate NIM into their Gen AI workflows.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tech Stack Block (Takes full width below) -->
+            <div class="col-md-12">
+                <div class="block">
+                    <h1>Tech Stack</h1>
+                    <div class="tech-stack">
+                        <h4>Frontend:</h4>
+                        <p>HTML, CSS</p>
+
+                        <h4>Backend:</h4>
+                        <p>Python Django, NIM</p>
+
+                        <h4>Cloud and LLM:</h4>
+                        <p>GPT, Cloud services</p>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

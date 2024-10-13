@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %} <!-- Load widget_tweaks template tags -->
+{% block title %}Register{% endblock title %}
+{% block content %}
+  <div class="register-container">
+    <h1 class="register-title">Create an Account</h1>
+    <form action="" method="post" class="register-form shadow p-4">
+      {% csrf_token %}
+      
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        {{ form.username|add_class:"form-control" }} <!-- Using add_class -->
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" class="form-control" required> <!-- Correcting the email input field -->
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password1">Password:</label>
+        {{ form.password1|add_class:"form-control" }} <!-- Using add_class -->
+      </div>
+
+      <!-- Confirm Password Field -->
+      <div class="form-group">
+        <label for="password2">Confirm Password:</label>
+        {{ form.password2|add_class:"form-control" }} <!-- Using add_class -->
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-block mt-4" color:"green">Register</button>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="{% url 'forminfo'%}">Login here</a></p>
+  </div>
+
+  <!-- Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Register Container Styles */
+    .register-container {
+      max-width: 450px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow:  0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Register Title Styles */
+    .register-title {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #343a40;
+    }
+
+    /* Form Styles */
+    .register-form {
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column; /* Align label and input vertically */
+    }
+
+    .form-group label {
+      margin-bottom: 5px; /* Add space between label and input */
+    }
+
+    .form-control {
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .btn-block {
+      padding: 10px;
+      font-size: 1.2em;
+    }
+
+    /* Link Styles */
+    .text-center a {
+      color: #007bff;
+    }
+
+    .text-center a:hover {
+      text-decoration: underline;
+    }
+  </style>
+{% endblock content %}

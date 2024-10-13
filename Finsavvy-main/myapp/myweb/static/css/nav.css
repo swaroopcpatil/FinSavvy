@@ -1,0 +1,115 @@
+/* General reset for padding and margin */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+header {
+    background-color: #5a60e1;
+    padding: 10px 0;
+}
+
+/* Navigation container */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+/* Logo styling */
+.logo img {
+    width: 70px;
+    height: 60px;
+
+}
+
+/* Navigation list styling */
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 40px;
+}
+
+/* Adjusted alignment for main navigation links (left side) */
+nav ul.nav-left {
+    margin-left: 0; /* Align directly to the left */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+/* Each navigation list item */
+nav ul li {
+    padding: 15px 20px;
+    margin-top: 15px;
+}
+
+/* Links within the navbar */
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0 10px;
+}
+
+/* Hover effect on links */
+nav ul li a:hover {
+    font-weight: bolder;
+}
+
+/* Credential section (login, register links on the right side) */
+.cred {
+    display: flex;
+    margin-left: auto; /* Push credentials to the right */
+    list-style: none;
+}
+
+/* Individual credential list item */
+.cred li {
+    padding: 15px 20px;
+}
+
+/* Styling for credential links */
+.cred li a {
+    color: white;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cred {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cred {
+        padding: 0;
+        justify-content: center;
+    }
+}

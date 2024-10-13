@@ -1,0 +1,121 @@
+/* General reset for padding and margin */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+header {
+    background-color: #5a60e1;
+    padding: 5px 0; /* Reduce padding to minimize header size */
+}
+
+/* Navigation container */
+nav {
+    display: flex;
+    justify-content: space-between; /* Spread items (logo and nav items) */
+    align-items: center; /* Vertically center items */
+    padding: 5px 20px; /* Reduced padding */
+    background-color: #5a60e1;
+    flex-wrap: wrap; /* Ensure it wraps for smaller screens */
+}
+
+/* Logo styling */
+.logo {
+    margin-left: 10px; /* Slight left margin for logo */
+}
+
+/* Navigation list styling */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Each navigation list item */
+nav ul li {
+    padding: 5px 10px; /* Reduce padding for a smaller, more compact layout */
+}
+
+/* Links within the navbar */
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-size: medium; /* Adjusted font size */
+    padding: 5px 10px; /* Tighter padding around links */
+}
+
+/* Hover effect on links */
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+/* Credential section (login, register links) */
+.cred {
+    margin-left: auto;
+    padding-right: 10px; /* Adjust spacing */
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Section styling */
+section {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* H1 title styling */
+h1 {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* General paragraph styling */
+p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0062cc;
+}
+
+/* Flex container for the main section */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading container */
+.heading {
+    padding-right: 10%;
+}
+
+/* Image styling */
+.img img {
+    padding-left: 10%;
+    width: 40vw;
+}

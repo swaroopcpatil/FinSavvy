@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block something %}
+ <li><a href="{% url "ai" %}">Try AI</a></li>  
+{% endblock %}
+{% comment %} {% block title %}Details{% endblock title %} {% endcomment %}
+{% block title %}<title>Details</title>{% endblock title %}
+{% for message in messages %}
+<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="mb-0">Your Profile Details</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="mb-3">Personal Information</h4>
+                    <p><strong>First Name:</strong> {{ register.first_name }}</p>
+                    <p><strong>Last Name:</strong> {{ register.last_name }}</p>
+                    <p><strong>Email:</strong> {{ register.email }}</p>
+                    <p><strong>Phone Number:</strong> {{ register.phone_number }}</p>
+                    <p><strong>Date of Birth:</strong> {{ register.date_of_birth }}</p>
+                    <p><strong>Gender:</strong> <span class="badge bg-info">{{ register.gender }}</span></p>
+                    <p><strong>Location:</strong> {{ register.location }}</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">Financial Information</h4>
+                    <p><strong>Primary Bank:</strong> {{ register.primary_bank }}</p>
+                    <p><strong>Investment Accounts:</strong> {{ register.investment_accounts }}</p>
+                    <p><strong>Retirement Accounts:</strong> {{ register.retirement_accounts }}</p>
+                    <p><strong>Investment Goals:</strong> {{ register.investment_goals }}</p>
+                </div>
+            </div>
+            <hr>
+            <h4 class="text-center">Debt Information</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Debt Type</th>
+                        <th>Amount</th>
+                        <th>Interest Rate</th>
+                        <th>Repayment Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ register.debt_types }}</td>
+                        <td>{{ register.debt_amounts }}</td>
+                        <td>{{ register.interest_rates }}</td>
+                        <td>{{ register.debt_repayment_plans }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h4 class="text-center">Income & Expenses</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Income Sources</th>
+                        <th>Amount</th>
+                        <th>Expense Categories</th>
+                        <th>Expense Amounts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ register.income_sources }}</td>
+                        <td>${{ register.income_amount }}</td>
+                        <td>{{ register.expense_categories }}</td>
+                        <td>${{ register.expense_amounts }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h4 class="text-center">Insurance & Financial Goals</h4>
+            <p><strong>Insurance Types:</strong> {{ register.insurance_types }}</p>
+            <p><strong>Insurance Coverage:</strong> {{ register.insurance_coverage }}</p>
+            <p><strong>Insurance Premiums:</strong> {{ register.insurance_premiums }}</p>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Short-Term Goals</h5>
+                    <p>{{ register.short_term_goals }}</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Long-Term Goals</h5>
+                    <p>{{ register.long_term_goals }}</p>
+                </div>
+            </div>
+            <a href="{% url 'update_user_details' %}" class="btn btn-success btn-lg d-block mt-4">Update Details</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
