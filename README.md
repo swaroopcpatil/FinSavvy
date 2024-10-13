@@ -21,7 +21,7 @@ Clone the Repository:
 Start by cloning the project repository to your local machine.
 sh
 Copy code
-git clone https://github.com/yourusername/finsavvy.git
+git clone https://github.com/swaroopcpatil/finsavvy.git
 cd finsavvy
 Choose and Set Up the Environment:
 
